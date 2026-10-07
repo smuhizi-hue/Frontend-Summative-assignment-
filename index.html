@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <header>
+    <h1>Task Tracker</h1>
+    <p>School tasks in one place.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Tasks</h2>
+      
+      <div id="dashboard-cards"></div>
+      
+      <div class="trend-panel">
+        <h3>7-day</h3>
+        <div id="trend-chart"></div>
+      </div>
+
+      <div class="search-box">
+        <label>Search:</label>
+        <input id="search-input" type="text" placeholder="name or tag">
+      </div>
+
+      <div id="records-list"></div>
+    </section>
+
+    <section>
+      <h2>Add task</h2>
+      <form id="record-form">
+        <div class="form-row">
+          <label>Title:</label>
+          <input id="title-input" type="text" required>
+        </div>
+        <div class="form-row">
+          <label>Due:</label>
+          <input id="due-date-input" type="date" required>
+        </div>
+        
+        <button type="submit">Save</button>
+        <button type="button" id="form-reset">Clear</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>

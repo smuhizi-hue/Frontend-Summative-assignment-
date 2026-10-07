@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Task Tracker Tests</title>
+<style>body{font-family:Arial;padding:20px;background:#f7fafc} .ok{color:green} .bad{color:red}</style>
+</head>
+<body>
+it<h1>Task Tracker Tests</h1>
+<div id="out"></div>
+<script>
+const out=document.getElementById('out');
+function t(cond,msg){ const d=document.createElement('div'); d.innerHTML = `<strong>${msg}</strong>: ${cond?'<span class="ok">PASS</span>':'<span class="bad">FAIL</span>'}`; out.appendChild(d); }
+
+const patterns = {
+  title: /^\S(?:.*\S)?$/,
+  duration: /^(0|[1-9]\d*)(\.\d{1,2})?$/,
+  date: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/,
+  tag: /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/,
+  dup: /\b(\w+)\s+\1\b/i,
+};
+
+t('title valid','Study for Exam',patterns.title.test('Study for Exam'));
+
+t('title invalid leading space',!patterns.title.test(' Study'));
+
+t('duration int',patterns.duration.test('120'));
+
+t('duration dec',patterns.duration.test('120.5'));
+
+t('date ok',patterns.date.test('2025-09-29'));
+
+t('tag ok',patterns.tag.test('Group Study'));
+
+t('duplicate detected',patterns.dup.test('study study'));
+
+</script>
+</body>
+</html>
