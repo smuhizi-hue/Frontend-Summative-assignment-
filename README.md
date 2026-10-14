@@ -35,3 +35,4 @@ The task list starts empty unless you have saved tasks in this browser already. 
 - Date: `^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$`
 - Tag: `^[A-Za-z]+(?:[ -][A-Za-z]+)*$`
 - Dup words: `\\b(\\w+)\\s+\\1\\b`
+https://youtube.com/shorts/jPZSAfgrqRQ?si=BldVJleo0CDUrADa
