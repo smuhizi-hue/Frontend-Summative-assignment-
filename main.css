@@ -183,4 +183,4 @@ main h2 { margin: 0 0 16px; font-size: clamp (1.35rem, 2vw, 1.7rem); line-height
  
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
-}  
+}
