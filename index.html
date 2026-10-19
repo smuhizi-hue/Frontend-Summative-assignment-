@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Life Planner</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header>
+    <h1>Campus Life Planner</h1>
+    <p>School tasks in one place.</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="tasks-heading">
+      <h2 id="tasks-heading">Tasks</h2>
+      <div id="dashboard-cards"></div>
+
+      <div class="trend-panel">
+        <h3>7-day workload</h3>
+        <div id="trend-chart" aria-label="Workload over the next seven days"></div>
+      </div>
+
+      <div class="records-controls">
+        <div class="control">
+          <label for="search-input">Search tasks</label>
+          <input id="search-input" type="search" placeholder="Search title, tag, or due date">
+        </div>
+        <div class="control checkbox-control">
+          <label for="search-case">
+            <input id="search-case" type="checkbox">
+            Match case
+          </label>
+        </div>
+        <div class="control">
+          <label for="sort-select">Sort by</label>
+          <select id="sort-select">
+            <option value="dueDate-asc">Due date (earliest first)</option>
+            <option value="dueDate-desc">Due date (latest first)</option>
+            <option value="title-asc">Title (A-Z)</option>
+            <option value="title-desc">Title (Z-A)</option>
+            <option value="duration-asc">Duration (shortest first)</option>
+            <option value="duration-desc">Duration (longest first)</option>
+          </select>
+        </div>
+      </div>
+      <div id="record-error" class="status-message" role="status" aria-live="polite"></div>
+      <div id="records-list" class="records-list"></div>
+    </section>
+
+    <section aria-labelledby="add-task-heading">
+      <h2 id="add-task-heading">Add task</h2>
+      <form id="record-form">
+        <div class="form-row">
+          <label for="title-input">Title</label>
+          <input id="title-input" type="text" required>
+          <span id="title-error" class="field-error"></span>
+        </div>
+        <div class="form-row">
+          <label for="due-date-input">Due date</label>
+          <input id="due-date-input" type="date" required>
+          <span id="dueDate-error" class="field-error"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="tag-input">Tag</label>
+          <input id="tag-input" type="text" placeholder="Homework, Work, Personal... required>
+          <span id="tag-error" class="field-error"></span>
+        </div>
+        <button type="submit">Save task</button>
+        <button type="button" id="form-reset">Clear</button>
+      </form>
+      
+          <div class="data-management">
+            <span class="section-subtitle">Data Management</span>
+            <div class= "button-group">
+            <button type="button" id="export-json" class="btn-secondary"> Export Data</button>
+            <label class="file-label" for="import-json">
+              Import Data
+              <input id="import-json" type="file" accept="application/json,.json">
+            </label>
+            <span id="import-error" class="field-error" role="alert"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
