@@ -33,7 +33,6 @@ function loadState(){
 function saveState(){ storage.save(state); }
 function syncSettings(){
   dom.unitRadios.forEach(r=>r.checked = r.value === state.settings.unit);
-  dom.weeklyTarget.value = state.settings.weeklyTarget;
 }
 
 function makeId(){ return `task_${Date.now().toString(36)}`; }

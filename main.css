@@ -63,7 +63,9 @@ button:hover, .btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 10px 20px rgba(37, 99, 235, .15);
 }
-button[type="submit"], .btn-primary { background: var(--primary); color: #fff; 
+button[type="submit"], .btn-primary { 
+    background: var(--primary); color: #fff; 
+}
 .btn-secondary { background: #e6eefc; color: var(--text); }
 
 /* Inputs */
@@ -164,10 +166,11 @@ main h2 { margin: 0 0 16px; font-size: clamp (1.35rem, 2vw, 1.7rem); line-height
        border-radius: var(--radius);
        box-shadow: 0 12px 30px rgba(15, 23, 42, .07); 
     }
-  
+}  
 
  @media (min-width: 1024px) {
-  #dashboard-cards { grid-template-columns: repeat(4, 1fr); }
+  #dashboard-cards { grid-template-columns: repeat(3, 1fr);
+   }
 }
  
 /* Small phones */
@@ -179,5 +182,8 @@ main h2 { margin: 0 0 16px; font-size: clamp (1.35rem, 2vw, 1.7rem); line-height
 }
  
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  * {
+    transition: none !important;
+    animation: none !important; 
+  }
 }
